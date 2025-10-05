@@ -1,0 +1,171 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 页面容器 */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* 页头样式 */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+/* 游戏信息区域 */
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.current-player {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #555;
+}
+
+#current-player {
+    color: #000;
+    font-weight: bold;
+}
+
+/* 重新开始按钮 */
+#restart-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+#restart-btn:hover {
+    background-color: #45a049;
+}
+
+/* 游戏棋盘 */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    gap: 1px;
+    background-color: #8B4513;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* 棋盘格子 */
+.cell {
+    width: 35px;
+    height: 35px;
+    background-color: #DEB887;
+    border: 1px solid #8B4513;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.cell:hover {
+    background-color: #F4A460;
+}
+
+/* 棋子样式 */
+.piece {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 黑棋样式 */
+.piece.black {
+    background: radial-gradient(circle at 30% 30%, #555, #000);
+    border: 1px solid #333;
+}
+
+/* 白棋样式 */
+.piece.white {
+    background: radial-gradient(circle at 30% 30%, #fff, #e0e0e0);
+    border: 1px solid #ccc;
+}
+
+/* 游戏状态显示 */
+.game-status {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    min-height: 30px;
+}
+
+/* 获胜动画 */
+.winner-animation {
+    animation: winner-pulse 1s ease-in-out infinite;
+}
+
+@keyframes winner-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .game-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .game-board {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .cell {
+        width: 25px;
+        height: 25px;
+    }
+
+    .piece {
+        width: 20px;
+        height: 20px;
+    }
+}
