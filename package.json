@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "live-server --port=3000 --open=index.html",
     "build": "echo '构建完成'",
+    "lint": "eslint src/*.js",
+    "lint:fix": "eslint src/*.js --fix",
     "typecheck": "echo '类型检查完成'"
   },
   "keywords": [
@@ -17,6 +19,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^9.37.0",
     "live-server": "^1.2.2"
   },
   "engines": {
